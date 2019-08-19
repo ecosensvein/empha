@@ -1,0 +1,160 @@
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #999; }
+
+body input:required:valid,
+body textarea:required:valid {
+  color: #fff; }
+
+input {
+  border: none;
+  outline: none; }
+
+textarea {
+  border: none;
+  outline: none; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: 10px;
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  position: relative;
+  font-family: "Montserrat";
+  margin: 0px; }
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1000px 1fr;
+  gap: 20px;
+  font-weight: 300;
+  margin: 40px 0px; }
+  #app .app-name {
+    grid-column: 2;
+    font-size: 4rem;
+    color: #607792;
+    opacity: .5; }
+    #app .app-name span {
+      font-size: 5rem; }
+  #app div.panel {
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    grid-column: 2;
+    background: #f5f7fa;
+    padding: 40px 40px;
+    font-size: 1.6rem;
+    transition: 2s; }
+    #app div.panel-user {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      grid-template-rows: 100px 200px;
+      width: 100%;
+      color: white; }
+      #app div.panel-user img {
+        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        width: 300px;
+        grid-row: 1/3; }
+      #app div.panel-user span {
+        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        background-color: #cad5e5;
+        color: #607792;
+        font-size: 4rem;
+        margin: 0px 40px;
+        padding: 10px 0px;
+        height: fit-content;
+        grid-row: 1;
+        text-align: center; }
+    #app div.panel-friends {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-evenly; }
+      #app div.panel-friends .panel-friends-friend {
+        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 40px auto 0px auto;
+        max-width: 160px;
+        background-color: #4a76a8;
+        color: white; }
+        #app div.panel-friends .panel-friends-friend a {
+          opacity: .9;
+          transition: .2s;
+          display: grid;
+          grid-template-rows: 160px minmax(58px, auto); }
+          #app div.panel-friends .panel-friends-friend a:hover {
+            opacity: 1; }
+          #app div.panel-friends .panel-friends-friend a img {
+            height: 100%; }
+          #app div.panel-friends .panel-friends-friend a span {
+            padding: 10px 15px;
+            word-break: break-word;
+            margin: auto;
+            display: inline-block;
+            color: white; }
+    #app div.panel-paginator {
+      margin: 40px auto 0px auto;
+      text-align: center; }
+      #app div.panel-paginator span {
+        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        opacity: .9;
+        transition: .2s;
+        background: #3e628c;
+        padding: 10px 20px;
+        color: white;
+        text-align: center;
+        cursor: pointer; }
+        #app div.panel-paginator span:hover {
+          opacity: 1; }
+    #app div.panel .panel-authenticate {
+      opacity: .9;
+      transition: .2s;
+      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09), 3px 3px 1px -2px rgba(0, 0, 0, 0.09), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: auto;
+      background-color: #3e628c;
+      color: white;
+      padding: 10px 20px;
+      grid-row: 2; }
+      #app div.panel .panel-authenticate:hover {
+        opacity: 1; }
+
+#cred {
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  grid-auto-flow: column;
+  gap: 1px;
+  font-weight: 600; }
+  #cred p {
+    grid-column: 2;
+    background: #f5f7fa;
+    padding: 5px 20px;
+    margin: 0px;
+    font-size: 1.6rem;
+    color: #627284;
+    display: flex;
+    justify-content: space-between; }
+    #cred p:nth-child(n+4) {
+      grid-column: 3; }
+    #cred p a {
+      color: #6b96c7; }
+      #cred p a:hover {
+        color: #467cb9; }
+
+/*# sourceMappingURL=base.css.map */

@@ -1,0 +1,57 @@
+{% extends "dashboard/base.html" %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div id="vk_api_transport"></div>
+    <section id="cred">
+        <p>GitHub:
+            <a href="https://github.com/ecosensvein/empha">github.com/ecosensvein/empha</a>
+        </p>
+        <p>Email:
+            <a rel="nofollow" target="_blank" href="mailto:zinglebarwerq@yandex.ru">zinglebarwerq@yandex.ru</a>
+        </p>
+        <p>Telegram:
+            <a rel="nofollow" target="_blank" href="https://t.me/Alexesv">@Alexesv</a>
+        </p>
+        <p>Source code:
+            <a href="http://185.154.53.222/media/empha.tar.gz">empha.tar.gz</a>
+        </p>
+        <p>WhatsApp:
+            <a rel="nofollow" target="_blank" href="https://wa.me/79620824490">wa.me/79620824490</a>
+        </p>
+        <p></p>
+    </section>
+    <section id="app">
+        <a class="app-name" href="{% url 'dashboard:index' %}">
+            <span>EMPHA</span>
+            social app
+        </a>
+        <div class="panel">
+            <div class="panel-user">
+                <img :src="avatar">
+                <span>[[ name ]]</span>
+                {% if user.is_authenticated %}
+                    <a class="panel-authenticate" href="{% url 'logout' %}">Деавторизоваться</a>
+                {% else %}
+                    <a class="panel-authenticate" href="{% url "social:begin" "vk-oauth2" %}">Авторизоваться</a>
+                {% endif %}
+            </div>
+            <div class="panel-friends">
+                <div v-if="friends" v-for="friend in friends" v-bind:key="friend.id" class="panel-friends-friend">
+                    <a :href="'https://vk.com/id' + friend.id" target="_blank">
+                        <img :src="friend.photo_200 || '/static/img/anon.png'">
+                        <span>[[ friend.first_name ]] [[ friend.last_name ]]</span>
+                    </a>
+                </div>
+            </div>
+            <div v-if="count > 5" class="panel-paginator">
+                <span v-if="offset >= 5" v-on:click="prev_friends()">Предыдущие</span>
+                <span v-if="count - offset >= 5" v-on:click="next_friends()">Следующие</span>
+            </div>
+        </div>
+    </section>
+    <script type='text/javascript'>
+        var backend = {{ backend|safe }};
+    </script>
+    {% verbatim %}{% endverbatim %}
+{% endblock %}
